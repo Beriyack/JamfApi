@@ -62,6 +62,20 @@ class JamfApi
     }
 
     /**
+     * Récupère tout les appareils depuis l'API Jamf.
+     *
+     * @param array $options Options cURL supplémentaires qui écraseront les options par défaut (facultatif).
+     * @return mixed La réponse de l'API, généralement un tableau ou un objet.
+     */
+    public function getDevices(array $options = [])
+    {
+        $endpoint = self::BASE_URL . '/devices';
+        $defaultOptions = $this->getDefaultOptions();
+        $mergedOptions = array_replace($defaultOptions, $options);
+        return ApiClient::get($endpoint, $mergedOptions);
+    }
+
+    /**
      * Effectue une requête GET générique à un endpoint de l'API Jamf.
      *
      * @param string $path Le chemin de l'endpoint (par exemple, '/devices' ou '/users/1').
