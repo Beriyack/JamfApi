@@ -45,12 +45,15 @@ use Beriyack\JamfApi;
 // Vos identifiants Jamf
 $networkId = 'VOTRE_NETWORK_ID'; // Remplacez par votre Network ID Jamf
 $key = 'VOTRE_CLE_API';         // Remplacez par votre clé d'API Jamf
+// Avec le certificat pour l'environnemnt de développement local
+// Pour l'environnement de production, le certificat n'est pas nécessaire
 $caCertPath = __DIR__ . '/Amazon Root CA 1.crt'; // Chemin absolu vers votre fichier .crt
 
 // Assurez-vous que le fichier de certificat existe
 if (!file_exists($caCertPath)) {
     die("Erreur: Le fichier de certificat CA n'a pas été trouvé à l'emplacement: " . $caCertPath);
 }
+
 
 try {
     // Instanciez la bibliothèque JamfApi
