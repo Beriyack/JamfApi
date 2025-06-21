@@ -73,14 +73,14 @@ try {
 
     // --- Exemple 2: Requête GET générique pour un autre endpoint (si disponible) ---
     // Supposons un endpoint '/devices' existe et retourne des données
-    // echo "Récupération des appareils...\n";
-    // $devices = $jamf->get('/devices');
-    // if ($devices) {
-    //     echo "Appareils trouvés:\n";
-    //     print_r($devices);
-    // } else {
-    //     echo "Aucun appareil trouvé ou erreur lors de la récupération.\n";
-    // }
+    echo "Récupération des appareils...\n";
+    $devices = $jamf->get('/devices');
+    if ($devices) {
+        echo "Appareils trouvés:\n";
+        print_r($devices);
+    } else {
+        echo "Aucun appareil trouvé ou erreur lors de la récupération.\n";
+    }
 } catch (Exception $e) {
     echo "Une erreur est survenue : " . $e->getMessage() . "\n";
 }
