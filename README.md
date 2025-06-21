@@ -54,7 +54,6 @@ if (!file_exists($caCertPath)) {
     die("Erreur: Le fichier de certificat CA n'a pas été trouvé à l'emplacement: " . $caCertPath);
 }
 
-
 try {
     // Instanciez la bibliothèque JamfApi
     $jamf = new JamfApi($networkId, $key, $caCertPath);
